@@ -7,5 +7,6 @@ def test_load_data():
         "data/raw/BrentOilPrices.csv"
     )
 
+    assert df is not None
     assert len(df) > 0
     assert "Price" in df.columns
