@@ -1,71 +1,60 @@
-# Brent Oil Change Point Analysis — Task 1
+# Brent Oil Change Point Analysis
 
-## Overview
+## Project Overview
 
-This task focuses on preparing and exploring Brent oil price data for change point analysis. The goal is to understand historical price behavior, identify trends, analyze volatility, and prepare the data for Bayesian change point modeling.
+This project analyzes historical Brent crude oil prices to identify structural changes associated with major geopolitical and economic events. The analysis combines exploratory data analysis, time series techniques, and Bayesian change point modeling to detect significant shifts in oil price behavior.
 
-## Objectives
+## Analysis Workflow
 
-- Load and clean Brent oil price data
-- Perform exploratory data analysis (EDA)
-- Analyze historical price trends
-- Check stationarity using the Augmented Dickey-Fuller (ADF) test
-- Analyze volatility using log returns
-- Research major historical events affecting oil prices
-- Document assumptions and change point modeling concepts
+```
+Data
+ ↓
+Cleaning
+ ↓
+EDA
+ ↓
+Trend Analysis
+ ↓
+Stationarity
+ ↓
+Volatility
+ ↓
+Bayesian Change Point Model
+ ↓
+Dashboard
+```
 
 ## Project Structure
 
 ```
 brent-oil-change-point-analysis/
-│
 ├── data/
 │   └── raw/
 │       ├── BrentOilPrices.csv
 │       └── events.csv
-│
 ├── notebooks/
-│   └── task_1_eda.ipynb
-│
+│   └── task1_analysis.ipynb
 ├── reports/
-│   ├── analysis_plan.md
-│   ├── assumptions.md
-│   └── change_point_notes.md
-│
+├── src/
+├── requirements.txt
 └── README.md
 ```
 
-## Analysis Steps
+## Technologies
 
-1. Load Brent oil price data
-2. Convert dates and inspect the dataset
-3. Perform EDA:
-   - Historical price visualization
-   - Price distribution analysis
-   - Outlier detection
-   - Rolling mean trend analysis
-4. Analyze trends and market behavior
-5. Test stationarity using ADF test
-6. Calculate log returns and study volatility
-7. Collect major oil market events
-8. Prepare for Bayesian change point modeling
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Statsmodels
+* PyMC
+* Jupyter Notebook
 
-## Tools Used
+## Objectives
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Statsmodels
-- PyMC
-- ArviZ
-- Jupyter Notebook
-
-## Key Findings
-
-The analysis identified changes in Brent oil price behavior over time, including periods of high volatility and significant market movements. These observations will support the next stage of Bayesian change point modeling.
-
-## Next Steps
-
-Build a Bayesian Change Point Model to detect significant structural changes in Brent oil prices and compare detected change points with historical events.
+* Analyze historical Brent oil price trends.
+* Explore stationarity and volatility patterns.
+* Identify structural breaks using Bayesian change point analysis.
+* Relate detected changes to major global events.
+* Present insights through an interactive dashboard.

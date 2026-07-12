@@ -9,3 +9,4 @@ arviz
 jupyter
 flask
 python-dotenv
+pytest
