@@ -58,3 +58,171 @@ brent-oil-change-point-analysis/
 * Identify structural breaks using Bayesian change point analysis.
 * Relate detected changes to major global events.
 * Present insights through an interactive dashboard.
+
+# Bayesian Change Point Analysis of Brent Oil Prices
+
+## Overview
+
+This project applies Bayesian change point detection to identify structural changes in Brent crude oil price behavior.
+
+The goal is to detect periods where the statistical properties of oil returns changed and investigate possible real-world causes.
+
+## Objectives
+
+- Analyze Brent oil price trends
+- Calculate and study daily log returns
+- Build a Bayesian change point model using PyMC
+- Identify structural breaks in oil market behavior
+- Quantify the impact before and after detected changes
+- Relate detected changes to historical oil market events
+
+## Dataset
+
+Dataset:
+- Brent Oil Prices
+
+Features:
+- Date
+- Price
+
+The data contains historical daily Brent crude oil prices.
+
+## Methodology
+
+### 1. Data Preparation
+
+- Loaded Brent oil price data
+- Converted dates into datetime format
+- Calculated daily log returns:
+
+```
+log(price_t) - log(price_t-1)
+```
+
+- Removed missing values
+
+### 2. Exploratory Data Analysis
+
+Performed:
+
+- Brent oil price trend visualization
+- Log return analysis
+- Volatility observation
+
+### 3. Bayesian Change Point Model
+
+A PyMC Bayesian model was developed.
+
+Model components:
+
+- `tau`: Unknown change point location
+- `mu_1`: Mean return before change
+- `mu_2`: Mean return after change
+- `sigma`: Return volatility
+
+The model uses:
+
+- Discrete Uniform prior for change point
+- `pm.math.switch()` to change the mean after tau
+- Normal likelihood for log returns
+
+### 4. MCMC Sampling
+
+The model was estimated using PyMC MCMC sampling.
+
+Sampling configuration:
+
+- Draws: 100
+- Tune: 100
+- Chains: 1
+
+Diagnostics were checked using:
+
+- Posterior summary
+- Trace plots
+- Posterior distributions
+
+## Results
+
+The Bayesian model detected a structural break around:
+
+**25 May 1989**
+
+The estimated change in average daily log returns:
+
+Before change point:
+
+```
+-0.015%
+```
+
+After change point:
+
+```
++0.037%
+```
+
+The difference represents approximately:
+
+```
++0.052% improvement in average daily return
+```
+
+Estimated volatility:
+
+```
+sigma ≈ 0.029
+```
+
+## Interpretation
+
+The detected change point occurred during the recovery period after the 1986 oil price collapse.
+
+Possible contributing factors include:
+
+- OPEC production policies
+- Improving global oil demand
+- Market expectation changes
+
+The model identifies a statistical relationship but cannot prove a single causal event.
+
+## Visualizations
+
+The notebook includes:
+
+- Brent oil price trend
+- Log return behavior
+- Trace plots
+- Posterior distribution of change point
+- Posterior distributions of model parameters
+- Brent price with detected change point
+
+## Future Work
+
+Possible improvements:
+
+- Include macroeconomic variables:
+  - GDP
+  - Inflation
+  - Exchange rates
+
+- Explore advanced models:
+  - VAR models for oil and economic relationships
+  - Markov-Switching models for market regimes
+
+## Tools Used
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- PyMC
+- ArviZ
+- Jupyter Notebook
+
+## Conclusion
+
+The Bayesian change point model successfully identified a structural shift in Brent oil price behavior.
+
+The analysis demonstrates how probabilistic models can help energy analysts detect market transitions and support decision-making.
