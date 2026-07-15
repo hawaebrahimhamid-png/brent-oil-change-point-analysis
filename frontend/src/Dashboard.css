@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+}
+
+
+/* Main dashboard container */
+.dashboard {
+
+  max-width: 1400px;
+
+  margin: auto;
+
+  padding: 30px;
+
+}
+
+
+/* Main dashboard title */
+.dashboard-main-title {
+
+  text-align: center;
+
+  font-size: 32px;
+
+  color: #1f2937;
+
+  margin-bottom: 5px;
+
+}
+
+
+/* Subtitle */
+.dashboard-subtitle {
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 16px;
+
+  margin-bottom: 30px;
+
+}
+
+
+/* Chart title */
+.dashboard-title {
+
+  text-align: center;
+
+  margin-bottom: 20px;
+
+  color: #374151;
+
+}
+
+
+/* Date filter area */
+.filter-container {
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  gap: 20px;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  flex-wrap: wrap;
+
+}
+
+
+/* Date inputs */
+.filter-container input {
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  border: 1px solid #d1d5db;
+
+}
+
+
+/* Chart card */
+.chart-container {
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 15px;
+
+  box-shadow: 
+  0 4px 12px rgba(0,0,0,0.08);
+
+}
+.summary-container {
+
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+
+}
+
+
+.summary-card {
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  text-align: center;
+
+}
